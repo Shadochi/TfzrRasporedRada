@@ -24,5 +24,10 @@ namespace RasporedRada
         {
             InitializeComponent();
         }
+
+        private void UcitajKlijente(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

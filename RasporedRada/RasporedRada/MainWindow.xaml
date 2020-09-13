@@ -8,6 +8,17 @@
         Title="Raspored Rada" Height="500" Width="900">
 	<Grid>
 		<DataGrid HorizontalAlignment="Left" Height="200" Margin="10,259,0,0" VerticalAlignment="Top" Width="872"/>
+		<Label Content="Ime" HorizontalAlignment="Left" Margin="32,34,0,0" VerticalAlignment="Top"/>
+		<Label Content="Prezime" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.519,1.154"/>
+		<Label Content="Klijent" HorizontalAlignment="Left" Margin="19,93,0,0" VerticalAlignment="Top"/>
+		<Label Content="Datum" HorizontalAlignment="Left" Margin="16,119,0,0" VerticalAlignment="Top"/>
+		<Label Content="Sati" HorizontalAlignment="Left" Margin="33,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.414,1.192"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<ComboBox HorizontalAlignment="Left" Margin="192,93,0,0" VerticalAlignment="Top" Width="120"/>
 
 	</Grid>
 </Window>

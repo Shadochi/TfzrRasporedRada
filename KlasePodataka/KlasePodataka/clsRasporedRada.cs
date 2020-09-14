@@ -11,61 +11,61 @@ namespace KlasePodataka
         // NAMENA: Klasa ciji objekat koja odgovara jednom zapisu iz baze podataka, ima samo set-get metode
 
         // atributi
-        private string _KorisnikIme;
-        private string _KorisnikAdresa;
-        private string _Proizvod;
-        private int _Kolicina;
-        private int _Cena;
-        private DateTime _DatumIsporuke;
+        private string _Ime;
+        private string _Prezime;
+        private string _Klijent;
+        private string _Posao;
+        private int _Sati;
+        private DateTime  _Datum;
 
         // konstruktor
-        public clsNarucivanje()
+        public clsRasporedRada()
         {
             // inicijalizacija atributa
-            _KorisnikIme = "";
-            _KorisnikAdresa = "";
-            _Proizvod = "";
-            _Kolicina = 0;
-            _Cena = 0;
-            _DatumIsporuke = DateTime.Now;
+            _Ime = string.Empty;
+            _Prezime = string.Empty;
+            _Klijent = string.Empty;
+            _Posao = string.Empty;
+            _Sati = 0;
+            _Datum = DateTime.Now;
 
         }
 
         // public 
-        public string KorisnikIme
+        public string Ime
         {
-            get { return _KorisnikIme; }
-            set { _KorisnikIme = value; }
+            get { return _Ime; }
+            set { _Ime = value; }
         }
 
-        public string KorisnikAdresa
+        public string Prezime
         {
-            get { return _KorisnikAdresa; }
-            set { _KorisnikAdresa = value; }
+            get { return _Prezime; }
+            set { _Prezime = value; }
         }
 
-        public string Proizvod
+        public string Klijent
         {
-            get { return _Proizvod; }
-            set { _Proizvod = value; }
+            get { return _Klijent; }
+            set { _Klijent = value; }
         }
 
-        public int Kolicina
+        public string Posao
         {
-            get { return _Kolicina; }
-            set { _Kolicina = value; }
+            get { return _Posao; }
+            set { _Posao = value; }
         }
 
-        public int Cena
+        public int Sati
         {
-            get { return _Cena; }
-            set { _Cena = value; }
+            get { return _Sati; }
+            set { _Sati = value; }
         }
 
-        public DateTime DatumIsporuke
+        public DateTime Datum
         {
-            get { return _DatumIsporuke; }
-            set { _DatumIsporuke = value; }
+            get { return _Datum; }
+            set { _Datum = value; }
         }
 
     }

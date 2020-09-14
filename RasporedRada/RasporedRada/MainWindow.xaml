@@ -13,12 +13,12 @@
 		<Label Content="Klijent" HorizontalAlignment="Left" Margin="19,93,0,0" VerticalAlignment="Top"/>
 		<Label Content="Datum" HorizontalAlignment="Left" Margin="16,119,0,0" VerticalAlignment="Top"/>
 		<Label Content="Sati" HorizontalAlignment="Left" Margin="33,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.414,1.192"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="67,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox x:Name="txtIme" HorizontalAlignment="Left" Height="23" Margin="67,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox x:Name="txtPrezime" HorizontalAlignment="Left" Height="23" Margin="67,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox x:Name="txtKlijent" HorizontalAlignment="Left" Height="23" Margin="67,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox x:Name="txtSati" HorizontalAlignment="Left" Height="23" Margin="67,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<ComboBox x:Name="cbxKlijenti" HorizontalAlignment="Left" Margin="192,93,0,0" VerticalAlignment="Top" Width="120" Loaded="cbxKlijenti_Ucitaj"/>
-		<DatePicker HorizontalAlignment="Left" Margin="67,122,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Text="Odaberi Datum"/>
+		<DatePicker x:Name="dpDatum" HorizontalAlignment="Left" Margin="67,122,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Text="Odaberi Datum" />
 
 	</Grid>
 </Window>

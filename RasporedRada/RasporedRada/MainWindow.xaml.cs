@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace RasporedRada
 {
@@ -55,9 +57,60 @@ namespace RasporedRada
             }
         }
 
+
+        /*
+         * Metoda za menjanje default texta na Date Picker-u iz "Select a date" u "Odaberi datum" pri učitavanju elementa
+         * Preuzeto sa: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/9eec87e0-4d12-430d-83fd-ce13dd96776b/datepicker-hide-quotselect-datequot-placeholder-or-change-it?forum=wpf
+         * Metode Datum_Ucitan i FindVisualChild
+         */
+        private void Datum_Ucitan(object sender, RoutedEventArgs e) 
+        {
+            DatePicker datePicker = sender as DatePicker;
+            if (datePicker != null)
+            {
+                System.Windows.Controls.Primitives.DatePickerTextBox datePickerTextBox = FindVisualCild<System.Windows.Controls.Primitives.DatePickerTextBox>(datePicker);
+                if (datePickerTextBox != null)
+                {
+                    ContentControl watermark = datePickerTextBox.Template.FindName("PART_Watermark", datePickerTextBox) as ContentControl;
+                    if (watermark != null)
+                    {
+                        watermark.Content = "Odaberi datum";
+                    }
+                }
+            }
+        }
+
+        private T FindVisualCild<T>(DependencyObject dependencyObject) where T : DependencyObject
+        {
+            if (dependencyObject != null)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(dependencyObject); i++)
+                {
+                    DependencyObject child = VisualTreeHelper.GetChild(dependencyObject, i);
+                    T result = (child as T) ?? FindVisualCild<T>(child);
+                    if (result != null)
+                    {
+                        return result;
+                    }
+                }
+            }
+            return null;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ponisti_Klik(object sender, RoutedEventArgs e)
+        {
+            txtIme.Text = string.Empty;
+            txtPrezime.Text = string.Empty;
+            txtSati.Text = "0";
+            txtKlijent.Text = string.Empty;
+            cbxPosao.SelectedIndex = -1;
+            cbxKlijenti.SelectedIndex = -1;
+            dpDatum.SelectedDate = null;
         }
     }
 }

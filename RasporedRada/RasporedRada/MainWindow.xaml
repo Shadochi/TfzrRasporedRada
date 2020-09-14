@@ -27,9 +27,9 @@
 		<TextBox x:Name="txtKlijent" HorizontalAlignment="Left" Height="23" Margin="67,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<TextBox x:Name="txtSati" HorizontalAlignment="Left" Height="23" Margin="67,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<ComboBox x:Name="cbxKlijenti" HorizontalAlignment="Left" Margin="192,93,0,0" VerticalAlignment="Top" Width="120" Loaded="cbxKlijenti_Ucitaj" Height="24"/>
-		<DatePicker x:Name="dpDatum" HorizontalAlignment="Left" Margin="67,151,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Text="Odaberi Datum" />
+		<DatePicker x:Name="dpDatum" HorizontalAlignment="Left" Margin="67,151,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Text="Odaberi Datum" Loaded="Datum_Ucitan" />
 		<Button Content="Unesi" HorizontalAlignment="Left" Margin="67,234,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-		<Button Content="Poništi" HorizontalAlignment="Left" Margin="147,234,0,0" VerticalAlignment="Top" Width="75"/>
+		<Button Content="Poništi" HorizontalAlignment="Left" Margin="147,234,0,0" VerticalAlignment="Top" Width="75" Click="ponisti_Klik"/>
 		<Button Content="Filter" HorizontalAlignment="Left" Margin="399,218,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 		<TextBox HorizontalAlignment="Left" Height="23" Margin="399,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229"/>
 		<Label Content="Ime i prezime:" HorizontalAlignment="Left" Margin="399,164,0,0" VerticalAlignment="Top"/>

@@ -7,18 +7,34 @@
         mc:Ignorable="d"
         Title="Raspored Rada" Height="500" Width="900">
 	<Grid>
-		<DataGrid HorizontalAlignment="Left" Height="200" Margin="10,259,0,0" VerticalAlignment="Top" Width="872"/>
+		<DataGrid Name="DataGrid" HorizontalAlignment="Left" Height="200" Margin="10,259,0,0" VerticalAlignment="Top" Width="872" AutoGenerateColumns="False">
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{Binding Ime}" Header="Ime" Width="*"/>
+				<DataGridTextColumn Binding="{Binding Prezime}" Header="Prezime" Width="*"/>
+				<DataGridTextColumn Binding="{Binding Klijent}" Header="Klijent" Width="*"/>
+				<DataGridTextColumn Binding="{Binding Posao}" Header="Posao" Width="*"/>
+				<DataGridTextColumn Binding="{Binding Datum}" Header="Datum" Width="*"/>
+				<DataGridTextColumn Binding="{Binding Sati}" Header="Sati" Width="*"/>
+			</DataGrid.Columns>
+		</DataGrid>
 		<Label Content="Ime" HorizontalAlignment="Left" Margin="32,34,0,0" VerticalAlignment="Top"/>
 		<Label Content="Prezime" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.519,1.154"/>
 		<Label Content="Klijent" HorizontalAlignment="Left" Margin="19,93,0,0" VerticalAlignment="Top"/>
-		<Label Content="Datum" HorizontalAlignment="Left" Margin="16,119,0,0" VerticalAlignment="Top"/>
-		<Label Content="Sati" HorizontalAlignment="Left" Margin="33,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.414,1.192"/>
+		<Label Content="Datum" HorizontalAlignment="Left" Margin="16,148,0,0" VerticalAlignment="Top"/>
+		<Label Content="Sati" HorizontalAlignment="Left" Margin="33,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.414,1.192"/>
 		<TextBox x:Name="txtIme" HorizontalAlignment="Left" Height="23" Margin="67,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<TextBox x:Name="txtPrezime" HorizontalAlignment="Left" Height="23" Margin="67,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<TextBox x:Name="txtKlijent" HorizontalAlignment="Left" Height="23" Margin="67,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<TextBox x:Name="txtSati" HorizontalAlignment="Left" Height="23" Margin="67,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<ComboBox x:Name="cbxKlijenti" HorizontalAlignment="Left" Margin="192,93,0,0" VerticalAlignment="Top" Width="120" Loaded="cbxKlijenti_Ucitaj"/>
-		<DatePicker x:Name="dpDatum" HorizontalAlignment="Left" Margin="67,122,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Text="Odaberi Datum" />
+		<TextBox x:Name="txtSati" HorizontalAlignment="Left" Height="23" Margin="67,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<ComboBox x:Name="cbxKlijenti" HorizontalAlignment="Left" Margin="192,93,0,0" VerticalAlignment="Top" Width="120" Loaded="cbxKlijenti_Ucitaj" Height="24"/>
+		<DatePicker x:Name="dpDatum" HorizontalAlignment="Left" Margin="67,151,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Text="Odaberi Datum" />
+		<Button Content="Unesi" HorizontalAlignment="Left" Margin="67,234,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+		<Button Content="Poništi" HorizontalAlignment="Left" Margin="147,234,0,0" VerticalAlignment="Top" Width="75"/>
+		<Button Content="Filter" HorizontalAlignment="Left" Margin="399,218,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+		<TextBox HorizontalAlignment="Left" Height="23" Margin="399,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229"/>
+		<Label Content="Ime i prezime:" HorizontalAlignment="Left" Margin="399,164,0,0" VerticalAlignment="Top"/>
+		<Label Content="Posao" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.414,1.192"/>
+		<ComboBox x:Name="cbxPosao" HorizontalAlignment="Left" Margin="67,122,0,0" VerticalAlignment="Top" Width="120" Loaded="cbxPosao_Ucitaj" Height="24"/>
 
 	</Grid>
 </Window>

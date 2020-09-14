@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Windows;
 
-namespace RasporedRada
+namespace RasporedRada.Servisi
 {
     public static class KlijentiServis
     {
@@ -22,12 +22,12 @@ namespace RasporedRada
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show("Putanja fajla neispravna!");
+                    MessageBox.Show("Putanja fajla za klijente neispravna!");
                 }
             }
             else
             {
-                MessageBox.Show("Putanja fajla je prazna!");
+                MessageBox.Show("Putanja fajla za klijente je prazna!");
             }
 
             return klijenti;

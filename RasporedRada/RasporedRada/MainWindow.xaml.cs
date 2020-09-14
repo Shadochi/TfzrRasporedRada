@@ -1,17 +1,7 @@
-﻿using System;
+﻿using RasporedRada.Servisi;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RasporedRada
 {
@@ -43,6 +33,31 @@ namespace RasporedRada
             {
                 cbxKlijenti.Opacity = 0;
             }
+        }
+
+        private void cbxPosao_Ucitaj(object sender, RoutedEventArgs e)
+        {
+            List<string> poslovi = PosaoServis.DajPosloveIzFajla().ToList();
+
+            if (poslovi != null && poslovi.Any())
+            {
+                foreach (string posao in poslovi)
+                {
+                    if (!string.IsNullOrWhiteSpace(posao))
+                    {
+                        cbxPosao.Items.Add(posao);
+                    }
+                }
+            }
+            else
+            {
+                cbxPosao.Opacity = 0;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

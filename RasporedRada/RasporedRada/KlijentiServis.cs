@@ -10,7 +10,7 @@ namespace RasporedRada
 
         public static IEnumerable<string> DajKlijenteIzFajla()
         {
-            IEnumerable<string> klijenti = Enumerable.Empty;
+            IEnumerable<string> klijenti = Enumerable.Empty<string>();
 
             if (!string.IsNullOrWhiteSpace(PutanjaFajla))
             {

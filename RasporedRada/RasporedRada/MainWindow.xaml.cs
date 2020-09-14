@@ -25,9 +25,24 @@ namespace RasporedRada
             InitializeComponent();
         }
 
-        private void UcitajKlijente(object sender, SelectionChangedEventArgs e)
+        private void cbxKlijenti_Ucitaj(object sender, RoutedEventArgs e)
         {
+            List<string> klijenti = KlijentiServis.DajKlijenteIzFajla().ToList();
 
+            if (klijenti != null && klijenti.Any())
+            {
+                foreach (string klijent in klijenti)
+                {
+                    if (!string.IsNullOrWhiteSpace(klijent))
+                    {
+                        cbxKlijenti.Items.Add(klijent);
+                    }
+                }
+            }
+            else
+            {
+                cbxKlijenti.Opacity = 0;
+            }
         }
     }
 }

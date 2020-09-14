@@ -89,7 +89,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="bin\Debug\RasporedRada.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,9 +98,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\RasporedRada.exe" />
-    <Content Include="bin\Debug\RasporedRada.pdb" />
     <Resource Include="bin\Debug\Resources\Klijenti.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\Resources\Posao.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

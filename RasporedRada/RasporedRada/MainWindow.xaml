@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RasporedRada"
         mc:Ignorable="d"
-        Title="Raspored Rada" Height="500" Width="900">
+        Title="Raspored Rada" Height="500" Width="699.745">
 	<Grid>
-		<DataGrid Name="DataGrid" HorizontalAlignment="Left" Height="200" Margin="10,259,0,0" VerticalAlignment="Top" Width="872" AutoGenerateColumns="False">
+		<DataGrid Name="DataGrid" HorizontalAlignment="Left" Height="200" Margin="10,259,10,10" VerticalAlignment="Top" AutoGenerateColumns="False">
 			<DataGrid.Columns>
 				<DataGridTextColumn Binding="{Binding Ime}" Header="Ime" Width="*"/>
 				<DataGridTextColumn Binding="{Binding Prezime}" Header="Prezime" Width="*"/>
@@ -25,16 +25,18 @@
 		<TextBox x:Name="txtIme" HorizontalAlignment="Left" Height="23" Margin="67,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<TextBox x:Name="txtPrezime" HorizontalAlignment="Left" Height="23" Margin="67,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<TextBox x:Name="txtKlijent" HorizontalAlignment="Left" Height="23" Margin="67,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<TextBox x:Name="txtSati" HorizontalAlignment="Left" Height="23" Margin="67,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<TextBox x:Name="txtSati" HorizontalAlignment="Left" Height="23" Margin="67,176,0,0" TextWrapping="Wrap" PreviewTextInput="SamoBrojevi" VerticalAlignment="Top" Width="120"/>
 		<ComboBox x:Name="cbxKlijenti" HorizontalAlignment="Left" Margin="192,93,0,0" VerticalAlignment="Top" Width="120" Loaded="cbxKlijenti_Ucitaj" Height="24"/>
 		<DatePicker x:Name="dpDatum" HorizontalAlignment="Left" Margin="67,151,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Text="Odaberi Datum" Loaded="Datum_Ucitan" />
 		<Button Content="Unesi" HorizontalAlignment="Left" Margin="67,234,0,0" VerticalAlignment="Top" Width="75" Click="unesi_Klik"/>
 		<Button Content="Poništi" HorizontalAlignment="Left" Margin="147,234,0,0" VerticalAlignment="Top" Width="75" Click="ponisti_Klik"/>
-		<Button Content="Filter" HorizontalAlignment="Left" Margin="399,218,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="399,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229"/>
+		<Button Content="Filter" HorizontalAlignment="Left" Margin="399,218,0,0" VerticalAlignment="Top" Width="75" Click="filter_Klik"/>
+		<TextBox x:Name="txtFilter" HorizontalAlignment="Left" Height="23" Margin="399,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229"/>
 		<Label Content="Ime i prezime:" HorizontalAlignment="Left" Margin="399,164,0,0" VerticalAlignment="Top"/>
 		<Label Content="Posao" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.414,1.192"/>
 		<ComboBox x:Name="cbxPosao" HorizontalAlignment="Left" Margin="67,122,0,0" VerticalAlignment="Top" Width="120" Loaded="cbxPosao_Ucitaj" Height="24"/>
+		<Button Content="Resetuj" HorizontalAlignment="Left" Margin="479,218,0,0" VerticalAlignment="Top" Width="75" Click="resetuj_Klik"/>
+		<Image HorizontalAlignment="Left" Height="175" Margin="444,0,0,0" VerticalAlignment="Top" Width="184" Source="Logo.PNG"/>
 
 	</Grid>
 </Window>

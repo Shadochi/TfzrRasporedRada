@@ -109,5 +109,8 @@
   <ItemGroup>
     <Resource Include="bin\Debug\Resources\Posao.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

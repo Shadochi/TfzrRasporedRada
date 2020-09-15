@@ -110,12 +110,45 @@ namespace RasporedRada
             return null;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void filter_Klik(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtFilter.Text))
+            {
+                MessageBox.Show("Uneti parametar za filter");
+            }
 
+            if (txtFilter.Text.Split(' ').Length != 2)
+            {
+                MessageBox.Show("Nije uneto ime i prezime, razdvojeno jednim razmakom");
+            }
+            else
+            {
+
+                clsRasporedRadaDB rasporedRadaDB = new clsRasporedRadaDB(SqlInstanca, NazivBaze);
+                DataGrid.ItemsSource = rasporedRadaDB.DajRasporedPremaKorisniku(txtFilter.Text).Tables["RasporedRada"].DefaultView;
+            }
+
+            
         }
 
+        private void resetuj_Klik(object sender, RoutedEventArgs e)
+        {
+            PonistiFilter();
+            BinDataGrid();
+        }
+
+        private void PonistiFilter()
+        {
+            txtFilter.Text = string.Empty;
+        }
+
+
         private void ponisti_Klik(object sender, RoutedEventArgs e)
+        {
+            ponistiFormu();
+        }
+
+        private void ponistiFormu()
         {
             txtIme.Text = string.Empty;
             txtPrezime.Text = string.Empty;
@@ -193,7 +226,26 @@ namespace RasporedRada
             {
                 MessageBox.Show(greska);
             }
+            ponistiFormu();
             BinDataGrid();
+        }
+
+
+        /*
+         * Provera i ograničenje za textbox za sate preko Regex-a kako bi se samo decimalni brojevi mogli uneti
+         */
+        private void SamoBrojevi(System.Object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = DaLiJeTekstBroj(e.Text);
+
+        }
+
+
+        private static bool DaLiJeTekstBroj(string str)
+        {
+            System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex("[^0-9.-]+");
+            return reg.IsMatch(str);
+
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using RasporedRada.Servisi;
+﻿using KlasePodataka;
+using RasporedRada.Servisi;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,9 +14,19 @@ namespace RasporedRada
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private string NazivBaze => ConfigurationManager.AppSettings["NazivBaze"];
+        private string SqlInstanca => ConfigurationManager.AppSettings["SqlInstanca"];
+
         public MainWindow()
         {
             InitializeComponent();
+            BinDataGrid();
+        }
+        private void BinDataGrid()
+        {
+            clsRasporedRadaDB rasporedRadaDB = new clsRasporedRadaDB(SqlInstanca, NazivBaze);
+            DataGrid.ItemsSource = rasporedRadaDB.DajSveIzRasporeda().Tables["RasporedRada"].DefaultView;
         }
 
         private void cbxKlijenti_Ucitaj(object sender, RoutedEventArgs e)
@@ -111,6 +123,11 @@ namespace RasporedRada
             cbxPosao.SelectedIndex = -1;
             cbxKlijenti.SelectedIndex = -1;
             dpDatum.SelectedDate = null;
+        }
+
+        private void unesi_Klik(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KlasePodataka">
+      <HintPath>..\..\KlasePodataka\KlasePodataka\bin\Debug\KlasePodataka.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLDBUtils">
+      <HintPath>..\..\KlasePodataka\KlasePodataka\bin\Debug\SQLDBUtils.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />

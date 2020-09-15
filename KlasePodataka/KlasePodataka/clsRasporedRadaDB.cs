@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SqlDBUtils;
+using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SqlDBUtils;
 namespace KlasePodataka
 {
     public class clsRasporedRadaDB

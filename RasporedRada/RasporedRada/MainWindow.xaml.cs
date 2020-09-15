@@ -226,8 +226,13 @@ namespace RasporedRada
             {
                 MessageBox.Show(greska);
             }
-            ponistiFormu();
-            BinDataGrid();
+            else
+            {
+                BinDataGrid();
+                MessageBox.Show("Uspešno uneta stavka!");
+                ponistiFormu();
+            }
+            
         }
 
 

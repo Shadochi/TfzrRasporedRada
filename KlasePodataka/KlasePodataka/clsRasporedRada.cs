@@ -11,7 +11,7 @@ namespace KlasePodataka
         private string _Prezime;
         private string _Klijent;
         private string _Posao;
-        private int _Sati;
+        private double _Sati;
         private DateTime  _Datum;
 
         // konstruktor
@@ -52,7 +52,7 @@ namespace KlasePodataka
             set { _Posao = value; }
         }
 
-        public int Sati
+        public double Sati
         {
             get { return _Sati; }
             set { _Sati = value; }

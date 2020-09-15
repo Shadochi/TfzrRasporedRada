@@ -1,5 +1,6 @@
 ﻿using KlasePodataka;
 using RasporedRada.Servisi;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -127,7 +128,72 @@ namespace RasporedRada
 
         private void unesi_Klik(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtIme.Text))
+            {
+                MessageBox.Show("Ime je prazno!");
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(txtPrezime.Text))
+            {
+                MessageBox.Show("Prezime je prazno!");
+            }
+
+            if (string.IsNullOrWhiteSpace(txtKlijent.Text))
+            {
+                if (cbxKlijenti.SelectedItem == null)
+                {
+                    MessageBox.Show("Klijent nije odabran!");
+                }
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSati.Text))
+            {
+                bool rezultat = double.TryParse(txtSati.Text, out double iSati);
+                if (rezultat == false)
+                {
+                    MessageBox.Show("Sati nisu uneti kao broj!");
+                    return;
+                }
+
+                if (iSati <= 0)
+                {
+                    MessageBox.Show("Sati ne mogu biti manji ili jednaki 0");
+                }
+            }
+
+            if (cbxPosao.SelectedItem == null)
+            {
+                MessageBox.Show("Posao nije odabran!");
+            }
+
+            clsRasporedRada objRasporedRada = new clsRasporedRada();
+
+            string klijent = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(txtKlijent.Text))
+            {
+                klijent = txtKlijent.Text;
+            }
+            else
+            {
+                klijent = cbxKlijenti.SelectedItem.ToString();
+            }
+
+            objRasporedRada.Ime = txtIme.Text;
+            objRasporedRada.Prezime = txtPrezime.Text;
+            objRasporedRada.Klijent = klijent;
+            objRasporedRada.Posao = cbxPosao.SelectedItem.ToString();
+            objRasporedRada.Sati = double.Parse(txtSati.Text);
+            objRasporedRada.Datum = (DateTime)dpDatum.SelectedDate;
+            clsRasporedRadaDB rasporedRadaDB = new clsRasporedRadaDB(SqlInstanca, NazivBaze);
+            rasporedRadaDB.SnimiNoviUnosRada(objRasporedRada, out bool uspeh, out string greska);
+
+            if (!uspeh)
+            {
+                MessageBox.Show(greska);
+            }
+            BinDataGrid();
         }
     }
 }
